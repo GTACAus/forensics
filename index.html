@@ -1,224 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Forensic Evidence</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forensic Evidence</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #EEECE1;
+      }
 
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 20px;
-      width: 100%;
-      height: 100vh;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      padding: 15px;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    .card img {
-      border-radius: 10px;
-      width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    .card h2 {
-      font-size: 1.3em;
-      margin: 10px 0;
-    }
-
-    .card a {
-      display: block;
-      text-decoration: none;
-      color: white;
-      background-color: #007bff;
-      padding: 10px;
-      border-radius: 25px;
-      font-size: 1em;
-      margin-top: 10px;
-    }
-
-    .card a:hover {
-      background-color: #0056b3;
-    }
-
-    @media (max-width: 1024px) {
       .grid-container {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .card {
+        background-color: #EEECE1;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 85%;
+      }
+
+      .card img {
+        border-radius: 10px;
+        width: 100%;
         height: auto;
+        margin-bottom: 10px;
+        cursor: pointer;
       }
-    }
 
-    @media (max-width: 600px) {
-      .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(10, auto);
+      .card h2 {
+        font-size: 1.3em;
+        margin: 10px 0;
       }
-    }
-  </style>
+
+      .card a {
+        display: block;
+        text-decoration: none;
+        color: white;        
+        padding: 10px;
+        border-radius: 25px;
+        font-size: 1em;
+        margin-top: 10px;
+      }
+
+      .card a:hover {
+        background-color: #0056b3;
+      }
+
+      @media (max-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          height: auto;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(10, auto);
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="grid-container">
       <!-- Original 6 Cards (shortened for readability) -->
       <div class="card">
-        <a href="alert.html">
+        <a href="https://www.thinglink.com/view/scene/1959498766377550310">
           <img
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.28.15%20am.png?v=1742945330028"
+            src="1_Feathers Skulls.png"
             alt="Bird remains: Pellets"
           />
-          <h2>Bird remains: Pellets</h2>
         </a>
-        <a href="alert.html">Learn More</a>
       </div>
 
       <div class="card">
-        <a href="spin.html">
+        <a href="https://www.thinglink.com/view/scene/1959498537498575334">
           <img
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.28.09%20am.png?v=1742945831244"
+            src="2_Pellets.png"
             alt="Bird remains: Feathers and Skulls"
           />
-          <h2>Bird remains: Feathers and Skulls</h2>
         </a>
-        <a href="spin.html">Learn More</a>
       </div>
 
       <div class="card">
-        <a href="identify.html">
+        <a href="https://www.thinglink.com/view/scene/1959498766281081318">
           <img
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.37.42%20am.png?v=1742945975734"
+            src="3_Toxicology.png"
             alt="Poison Analysis ELISA"
           />
-          <h2>Poison Analysis ELISA</h2>
         </a>
-        <a href="identify.html">Learn More</a>
       </div>
 
       <div class="card">
-        <a href="sense.html">
+        <a href="https://www.thinglink.com/view/scene/1959498633338421734">
           <img
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.38.15%20am.png?v=1742945990370"
+            src="4_DNA.png"
             alt="DNA Gel Electrophoresis"
           />
-          <h2>DNA Gel Electrophoresis</h2>
         </a>
-        <a href="sense.html">Learn More</a>
       </div>
 
       <div class="card">
-        <a id="fibreLink" href="https://spike.legoeducation.com/prime/start">
+        <a id="fibreLink" href="https://www.thinglink.com/view/scene/1959498766184612326">
           <img
             id="fibreImage"
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.38.22%20am.png?v=1742945999815"
+            src="5_Fibre.png"
             alt="Fibre Analysis"
           />
-          <h2>Fibre Analysis</h2>
         </a>
-        <a id="legoLearnMore" href="https://spike.legoeducation.com/prime/start"
-          >Learn More</a
-        >
       </div>
 
       <div class="card">
         <a
           id="bloodLink"
-          href="https://spike.legoeducation.com/prime/unit-plans/bltdfae10d779620d2b/lesson-detail/blt770a2bd5553064de"
+          href="https://www.thinglink.com/view/scene/1959498766083949030"
         >
           <img
             id="bloodImage"
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.38.32%20am.png?v=1742946017011"
+            src="6_blood.png"
             alt="Blood typing"
           />
-          <h2>Blood typing</h2>
         </a>
-        <a
-          id="robotLearnMore"
-          href="https://spike.legoeducation.com/prime/unit-plans/bltdfae10d779620d2b/lesson-detail/blt770a2bd5553064de"
-          >Learn More</a
-        >
       </div>
-      <!-- Additional 4 cards -->
+
       <div class="card">
-        <a href="track.html">
+        <a href="https://www.thinglink.com/view/scene/1959498633531359718">
           <img
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.38.48%20am.png?v=1742946082161"
-            alt="Track a Moving Object"
+            src="7_pollen.png"
+            alt="Forensic Botany"
           />
-          <h2>Track a Moving Object with Sensors</h2>
         </a>
-        <a href="track.html">Learn More</a>
       </div>
 
       <div class="card">
-        <a href="analyze.html">
-          <img src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.38.54%20am.png?v=1742946093897" alt="Analyze Sound" />
-          <h2>Use Microphones to Analyze Sound</h2>
-        </a>
-        <a href="analyze.html">Learn More</a>
-      </div>
-
-      <div class="card">
-        <a href="balance.html">
-          <img src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.39.04%20am.png?v=1742946157178" alt="Balance Robot" />
-          <h2>Program a Balancing Robot</h2>
-        </a>
-        <a href="balance.html">Learn More</a>
-      </div>
-
-      <div class="card">
-        <a href="light.html">
+        <a href="https://www.thinglink.com/view/scene/1959498633439085030">
           <img
-            src="https://cdn.glitch.global/90636fff-2e90-45ad-8a99-e82fb633b5b3/Screen%20Shot%202025-03-26%20at%2010.39.13%20am.png?v=1742946164956"
-            alt="Detect Light Levels"
+            src="8_larvae.png"
+            alt="Forensic Entomology"
           />
-          <h2>Detect Light and React to It</h2>
         </a>
-        <a href="light.html">Learn More</a>
+      </div>
+
+      <div class="card">
+        <a href="https://www.thinglink.com/view/scene/1959456211539591654">
+          <img
+            src="9_fingerprinting.png"
+            alt="Fingerprinting"
+          />
+        </a>
+      </div>
+
+      <div class="card">
+        <a href="https://gtacaus.github.io/interview/">
+          <img
+            src="10_interview.png"
+            alt="Interrogation"
+          />
+        </a>
       </div>
     </div>
 
-    <script>
-      function isiPad() {
-        if (navigator.userAgent.includes("iPad")) {
-          return true;
-        }
-        if (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1) {
-          return true;
-        }
-        return false;
-      }
-
-      if (isiPad()) {
-        document.getElementById("legoImage").src = "nav2start.gif";
-        document.getElementById("legoLink").href = "spike://";
-        document.getElementById("legoLearnMore").href = "spike://";
-
-        document.getElementById("robotImage").src = "nav2hopper.gif";
-        document.getElementById("robotLink").href = "spike://";
-        document.getElementById("robotLearnMore").href = "spike://";
-      }
-    </script>
+    
   </body>
 </html>
