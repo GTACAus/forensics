@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interviews</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background-color: #EEECE1;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      .card {
+        background-color: #EEECE1;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 85%;
+      }
+
+      .card img {
+        border-radius: 10px;
+        width: auto;
+        height: auto;
+        margin-bottom: 10px;
+        cursor: pointer;
+        max-height: 150px;
+      }
+
+      .card h2 {
+        font-size: 1.3em;
+        margin: 10px 0;
+      }
+
+      .card a {
+        display: block;
+        text-decoration: none;
+        color: black;        
+        padding: 10px;
+        border-radius: 25px;
+        font-size: 1em;
+        margin-top: 10px;
+      }
+
+      .card a:hover {
+        background-color: #0056b3;
+        color: white; 
+      }
+
+      @media (max-width: 1024px) {
+        .grid-container {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          height: auto;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .grid-container {
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(10, auto);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <!-- Original 6 Cards (shortened for readability) -->
+      <div class="card">
+        <a href="https://gtacaus.github.io/calendars/Angus.html">
+          <img
+            src="AN.png"
+            alt="Angus"
+          />
+        </a>
+        <a href="https://gtacaus.github.io/calendars/Angus.html">Angus Neal's Calendar</a>
+      </div>
+
+      <div class="card">
+        <a href="https://gtacaus.github.io/calendars/Eve.html">
+          <img
+            src="EH.png"
+            alt="Eve"
+          />
+        </a>
+        <a href="https://gtacaus.github.io/calendars/Eve.html">Eve Haddad's Calendar</a>
+      </div>
+
+      <div class="card">
+        <a href="https://gtacaus.github.io/calendars/Angelo.html">
+          <img
+            src="AH.png"
+            alt="Angelo"
+          />
+        </a>
+        <a href="https://gtacaus.github.io/calendars/Angelo.html">Angelo Hart's Calendar</a>
+      </div>
+
+      <div class="card">
+        <a href="https://gtacaus.github.io/calendars/harley.html">
+          <img
+            src="HM.png"
+            alt="Harley"
+          />
+        </a>
+        <a href="https://gtacaus.github.io/calendars/harley.html">Harley Macias' Calendar</a>
+      </div>
+
+      <div class="card">
+        <a id="Shad" href="https://gtacaus.github.io/calendars/shadiya.html">
+          <img
+            id="shadImage"
+            src="SH.png"
+            alt="Shadiyah"
+          />
+        </a>
+        <a href="https://gtacaus.github.io/calendars/shadiya.html">Shadiyah Hobbs' Calendar</a>
+      </div>
+
+      <div class="card">
+        <a
+          id="gladysLink"
+          href="https://gtacaus.github.io/calendars/gladys.html"
+        >
+          <img
+            id="gladysImage"
+            src="GM.jpg"
+            alt="Gladys"
+          />
+        </a>
+        <a href="https://gtacaus.github.io/calendars/gladys.html">Interview Gladys</a>
+      </div>
+      
+    </div>
+
+    
+  </body>
+</html>
