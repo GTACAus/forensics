@@ -178,6 +178,36 @@
         </a>
       </div>
     </div>
+<script>
+  // Convert local time to AEST (UTC+10)
+  function getAESTDate() {
+    const now = new Date();
+    // Get UTC time in milliseconds and add 10 hours worth of milliseconds
+    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    return new Date(utc + 10 * 60 * 60 * 1000); // AEST = UTC+10
+  }
+
+  function isWithinTimeRange(date) {
+    const currentHours = date.getHours();
+    const currentMinutes = date.getMinutes();
+
+    const startTotalMinutes = 13 * 60 + 40; // 11:40 AM - testing 1.30pm
+    const endTotalMinutes = 16 * 60 + 30;   // 4:30 PM
+    const currentTotalMinutes = currentHours * 60 + currentMinutes;
+
+    return currentTotalMinutes >= startTotalMinutes && currentTotalMinutes <= endTotalMinutes;
+  }
+
+  const aestNow = getAESTDate();
+  const isOpen = isWithinTimeRange(aestNow);
+  const interviewLink = document.getElementById("interviews.html") || document.getElementById("interviewLink") || document.querySelector('.card a[href="interviews.html"]');
+
+  if (!isOpen && interviewLink) {
+    interviewLink.style.pointerEvents = "none";
+    interviewLink.style.opacity = "0.5";
+    interviewLink.title = "This link is only available from 11:40am to 4:30pm AEST";
+  }
+</script>
 
     
   </body>
