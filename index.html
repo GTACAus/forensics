@@ -63,6 +63,17 @@
       .card a:hover {
         background-color: #0056b3;
       }
+      .logo-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+.logo-container img {
+  width: 40px;
+  height: 40px;
+}
 
       @media (max-width: 1024px) {
         .grid-container {
@@ -78,8 +89,12 @@
           grid-template-rows: repeat(10, auto);
         }
       }
+      
     </style>
   </head>
+  <div class="logo-container">
+  <img src="GTAC.PNG" alt="GTAC Logo" />
+  </div>
   <body>
     <div class="grid-container">
       <!-- Original 6 Cards (shortened for readability) -->
