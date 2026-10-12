@@ -216,8 +216,7 @@
     </div>
 
     <script>
-      function get MelbourneTime() {
-        // Using en-GB with hour12: false reliably returns 24-hour format (e.g., "14:30")
+      function getMelbourneTime() {
         const now = new Date();
         const timeStr = now.toLocaleTimeString('en-GB', {
           timeZone: 'Australia/Melbourne',
@@ -242,11 +241,20 @@
 
       const isOpen = isWithinTimeRange();
       const interviewLink = document.querySelector('.card a[href="interviews.html"]');
+      let clickCount = 0;
 
       if (!isOpen && interviewLink) {
-        interviewLink.style.pointerEvents = "none";
         interviewLink.style.opacity = "0.5";
         interviewLink.title = "This link is only available from 11:40am to 4:30pm Melbourne Time";
+        
+        // Listen for clicks to allow a 5-click bypass
+        interviewLink.addEventListener("click", function(event) {
+          event.preventDefault();
+          clickCount++;
+          if (clickCount >= 5) {
+            window.location.href = "interviews.html";
+          }
+        });
       }
     </script>
   </body>
