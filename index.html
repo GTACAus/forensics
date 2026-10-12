@@ -65,6 +65,7 @@
       .card a:hover {
         background-color: #0056b3;
       }
+
       .logo-container {
         position: absolute;
         top: 20px;
@@ -72,10 +73,10 @@
         z-index: 1000;
       }
 
-.logo-container img {
-  width: 40px;
-  height: 40px;
-}
+      .logo-container img {
+        width: 40px;
+        height: 40px;
+      }
 
       @media (max-width: 1024px) {
         .grid-container {
@@ -91,17 +92,16 @@
           grid-template-rows: repeat(10, auto);
         }
       }
-      
     </style>
   </head>
 
   <body>
-      <div class="logo-container">
-        <img src="GTAC.PNG" alt="GTAC Logo" />
-      </div>
+    <div class="logo-container">
+      <img src="GTAC.PNG" alt="GTAC Logo" />
+    </div>
+
     <div class="grid-container">
-      <!-- Original 6 Cards (shortened for readability) -->
-       <div class="card">
+      <div class="card">
         <a href="https://www.thinglink.com/view/scene/1959498766482407910">
           <img
             src="Wire Fence Button.png"
@@ -109,6 +109,7 @@
           />
         </a>
       </div>
+
       <div class="card">
         <a href="https://www.thinglink.com/view/scene/1959498537498575334">
           <img
@@ -144,6 +145,7 @@
           />
         </a>
       </div>
+
       <div class="card">
         <a href="records.html">
           <img
@@ -152,7 +154,6 @@
           />
         </a>
       </div>
-
 
       <div class="card">
         <a
@@ -166,6 +167,7 @@
           />
         </a>
       </div>
+
       <div class="card">
         <a id="fibreLink" href="https://www.thinglink.com/view/scene/1959498766184612326">
           <img
@@ -175,6 +177,7 @@
           />
         </a>
       </div>
+
       <div class="card">
         <a href="https://www.thinglink.com/view/scene/1959498633531359718">
           <img
@@ -210,39 +213,50 @@
           />
         </a>
       </div>
-
     </div>
-<script>
-  // Convert local time to AEST (UTC+10)
-  function getAESTDate() {
-    const now = new Date();
-    // Get UTC time in milliseconds and add 10 hours worth of milliseconds
-    const utc = now.getTime() + now.getTimezoneOffset() * 60000;
-    return new Date(utc + 10 * 60 * 60 * 1000); // AEST = UTC+10
-  }
 
-  function isWithinTimeRange(date) {
-    const currentHours = date.getHours();
-    const currentMinutes = date.getMinutes();
+    <script>
+      function getMelbourneTime() {
+        const now = new Date();
+        const formatter = new Intl.DateTimeFormat('en-AU', {
+          timeZone: 'Australia/Melbourne',
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: false
+        });
+        
+        const parts = formatter.formatToParts(now);
+        let hours = 0;
+        let minutes = 0;
+        
+        for (const part of parts) {
+          if (part.type === 'hour') hours = parseInt(part.value, 10);
+          if (part.type === 'minute') minutes = parseInt(part.value, 10);
+        }
+        
+        if (hours === 24) hours = 0;
 
-    const startTotalMinutes = 11 * 60 + 40; // 11:40 AM
-    const endTotalMinutes = 16 * 60 + 30;   // 4:30 PM
-    const currentTotalMinutes = currentHours * 60 + currentMinutes;
+        return { hours, minutes };
+      }
 
-    return currentTotalMinutes >= startTotalMinutes && currentTotalMinutes <= endTotalMinutes;
-  }
+      function isWithinTimeRange() {
+        const { hours, minutes } = getMelbourneTime();
+        
+        const startTotalMinutes = 11 * 60 + 40; // 11:40 AM
+        const endTotalMinutes = 16 * 60 + 30;   // 4:30 PM
+        const currentTotalMinutes = hours * 60 + minutes;
 
-  const aestNow = getAESTDate();
-  const isOpen = isWithinTimeRange(aestNow);
-  const interviewLink = document.getElementById("interviews.html") || document.getElementById("interviewLink") || document.querySelector('.card a[href="interviews.html"]');
+        return currentTotalMinutes >= startTotalMinutes && currentTotalMinutes <= endTotalMinutes;
+      }
 
-  if (!isOpen && interviewLink) {
-    interviewLink.style.pointerEvents = "none";
-    interviewLink.style.opacity = "0.5";
-    interviewLink.title = "This link is only available from 11:40am to 4:30pm AEST";
-  }
-</script>
+      const isOpen = isWithinTimeRange();
+      const interviewLink = document.querySelector('.card a[href="interviews.html"]');
 
-    
+      if (!isOpen && interviewLink) {
+        interviewLink.style.pointerEvents = "none";
+        interviewLink.style.opacity = "0.5";
+        interviewLink.title = "This link is only available from 11:40am to 4:30pm Melbourne Time";
+      }
+    </script>
   </body>
 </html>
